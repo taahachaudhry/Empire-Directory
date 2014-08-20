@@ -20,8 +20,10 @@ namespace EmpireDirectory.Controllers
         };
         public ActionResult Index()
         {
+            int RandomNum = new Random().Next(characters.Count());
             HomeIndexVM bucket = new HomeIndexVM();
             bucket.Characters = characters;
+            bucket.FeauturedCharacter = bucket.Characters[RandomNum];
             return View(bucket);
         }
 
