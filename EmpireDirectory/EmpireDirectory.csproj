@@ -167,6 +167,7 @@
     <Compile Include="Models\Affiliation.cs" />
     <Compile Include="Models\BountyHunter.cs" />
     <Compile Include="Models\Character.cs" />
+    <Compile Include="Models\HomeIndexVM.cs" />
     <Compile Include="Models\IdentityModels.cs" />
     <Compile Include="Models\Jedi.cs" />
     <Compile Include="Models\Rank.cs" />

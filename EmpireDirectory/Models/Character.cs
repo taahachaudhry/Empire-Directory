@@ -7,7 +7,7 @@ namespace EmpireDirectory.Models
 {
     public abstract class Character
     {
-        protected static int NextId { get; set; }
+        protected static int NextId = 0;
         public int ID { get; set; }
         public string Name { get; set; }
         public Affiliation Affiliation { get; set; }
