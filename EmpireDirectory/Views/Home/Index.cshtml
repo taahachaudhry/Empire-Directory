@@ -1,11 +1,12 @@
 ﻿@model EmpireDirectory.Models.HomeIndexVM
-<div class="container">
-    <div class="col-md-5">
-        <div class="item active">
-            <a href=""><img class="img-responsive" style="height:300px; width:300px;"src="@Model.FeauturedCharacter.Image"></a>
+<br /><div class="panel panel-default">
+    <div class="panel-body">
+        <div class="col-md-3">
+            <a href=""><img class="img-responsive" style="height:200px; width:200px;" src="@Model.FeauturedCharacter.Image"></a>
         </div>
-        <div class="carousel-caption">
-            @Model.FeauturedCharacter.Quote
+        <div class="col-md-9" style="text-align:center; font-size:large">
+            "@Model.FeauturedCharacter.Quote"
+            - @Model.FeauturedCharacter.Name
         </div>
     </div>
 </div>

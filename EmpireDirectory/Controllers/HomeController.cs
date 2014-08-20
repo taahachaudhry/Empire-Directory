@@ -24,16 +24,26 @@ namespace EmpireDirectory.Controllers
             HomeIndexVM bucket = new HomeIndexVM();
             bucket.Characters = characters;
             bucket.FeauturedCharacter = bucket.Characters[RandomNum];
+
             return View(bucket);
         }
-
-        public ActionResult About()
+        [HttpGet]
+        public ActionResult AddJedi()
         {
-            ViewBag.Message = "Your application description page.";
+            
 
             return View();
         }
+        [HttpPost]
+        public ActionResult AddJedi(string name, Affiliation affiliation)
+        {
+            Jedi jedi = new Jedi();
+            jedi.Name = name;
+            jedi.Affiliation = affiliation;
+            characters.Add(jedi);
 
+            return RedirectToAction("Index");
+        }
         public ActionResult Contact()
         {
             ViewBag.Message = "Your contact page.";
