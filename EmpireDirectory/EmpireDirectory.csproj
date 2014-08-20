@@ -167,6 +167,8 @@
     <Compile Include="Models\Affiliation.cs" />
     <Compile Include="Models\Character.cs" />
     <Compile Include="Models\IdentityModels.cs" />
+    <Compile Include="Models\Jedi.cs" />
+    <Compile Include="Models\Rank.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Startup.cs" />
   </ItemGroup>
