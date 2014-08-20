@@ -1,1 +1,22 @@
-﻿
+﻿@model EmpireDirectory.Models.HomeIndexVM
+<div class="container">
+    <div class="col-md-5">
+        <div class="item active">
+            <a href=""><img class="img-responsive" style="height:300px; width:300px;"src="@Model.FeauturedCharacter.Image"></a>
+        </div>
+        <div class="carousel-caption">
+            @Model.FeauturedCharacter.Quote
+        </div>
+    </div>
+</div>
+<table class="table table-condensed table-striped table-responsive">
+    <tr><th></th><th>Name</th><th>Affiliation</th></tr>
+    @foreach (var c in Model.Characters)
+    {
+        <tr>
+            <td><img class="img-responsive img-thumbnail" style="height:50px; width:50px;" src="@c.Image"></td>
+            <td>@c.Name</td>
+            <td>@c.Affiliation</td>
+        </tr>
+    }
+</table>
