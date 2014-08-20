@@ -44,6 +44,18 @@ namespace EmpireDirectory.Controllers
 
             return RedirectToAction("Index");
         }
+
+        public ActionResult JediDetail(int id)
+        {
+            characters[0].ID = 0;
+            //Jedi empty = new Jedi();
+            //string res = empty.GetType().ToString();
+            Jedi jedi = (Jedi)characters.Where(x => x.ID == id && x.GetType().ToString()=="EmpireDirectory.Models.Jedi").FirstOrDefault(); //Linq statement - lamba
+
+            // Jedi anotherJedi = (Jedi)jedi; //casting jedi to Jedi from Character
+
+            return View();
+        }
         public ActionResult Contact()
         {
             ViewBag.Message = "Your contact page.";
