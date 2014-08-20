@@ -22,5 +22,9 @@ namespace EmpireDirectory.Models
             LightSaber = lightsaber;
             Force = force;
         }
+        public Jedi()
+        {
+
+        }
     }
 }
