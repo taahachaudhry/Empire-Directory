@@ -1,6 +1,6 @@
 ﻿@model EmpireDirectory.Models.Jedi
-<input type="text" name="Force" value="@Model.Force" />
-<input type="text" name="Lightsaber" value="@Model.LightSaber" />
+Force: <input class="form-control" type="text" name="Force" value="@Model.Force" />
+Light Saber Color: <input class="form-control" type="text" name="Lightsaber" value="@Model.LightSaber" />
 @{
 /*
 var x = Model.Rank.ToString();
@@ -13,4 +13,5 @@ SelectList list = new SelectList(new List<EmpireDirectory.Models.Rank>()
 }, Model.Rank);
 */
 }
+@Html.LabelFor(x => x.Rank)
 @Html.DropDownList("Rank", new SelectList(EmpireDirectory.Models.Ranks.toList(), Model.Rank), new { @class = "form-control" })

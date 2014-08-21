@@ -5,16 +5,28 @@
 }
 
 <h2>Edit</h2>
+<form method="post">
+@Html.HiddenFor(x=>x.ID)
+@Html.LabelFor(x => x.Name)
 @Html.EditorFor(x => x.Name)
+<br />
 <select name="affiliation">
     <option value="Empire">Empire</option>
     <option value="Rebel">Rebel</option>
     <option value="Mercernary">Mercernary</option>
 </select>
+@Html.LabelFor(x => x.Image)
 @Html.EditorFor(x => x.Image)
+<br />
+@Html.LabelFor(x => x.Quote)
 @Html.EditorFor(x => x.Quote)
+<br />
+@Html.LabelFor(x => x.Bio)
 @Html.EditorFor(x => x.Bio)
+<br />
+@Html.LabelFor(x => x.Weapon)
 @Html.EditorFor(x => x.Weapon)
+<br />
 
 @if (Model.GetType().ToString() == "EmpireDirectory.Models.Jedi")
 {
@@ -24,3 +36,6 @@ else if (Model.GetType().ToString() == "EmpireDirectory.Models.BountyHunter")
 {
     @Html.Partial("_BountyHunterEdit", (EmpireDirectory.Models.BountyHunter)Model);
 }
+
+<input type="submit" value="Save" class="btn btn-primary pull-right" /><br />
+</form>

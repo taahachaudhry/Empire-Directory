@@ -68,5 +68,28 @@ namespace EmpireDirectory.Controllers
             Character character = characters.Where(x => x.ID == id).FirstOrDefault();
             return View(character);
         }
+        [HttpPost]
+        public ActionResult Edit(Jedi jedi, BountyHunter bountyhunter)
+        {
+            var character = characters.Where(x => x.ID == jedi.ID).FirstOrDefault();
+            if (character.GetType().ToString() == "EmpireDirectory.Models.Jedi")
+            {
+                Jedi oldJedi = (Jedi)character;
+                oldJedi.Affiliation = jedi.Affiliation;
+                oldJedi.Bio = jedi.Bio;
+                oldJedi.Force = jedi.Force;
+                oldJedi.Image = jedi.Image;
+                oldJedi.Name = jedi.Name;
+                oldJedi.Weapon = jedi.Weapon;
+                oldJedi.Rank = jedi.Rank;
+                oldJedi.LightSaber = jedi.LightSaber;
+                oldJedi.Quote = jedi.Quote;
+            }
+            else
+            {
+                ///Hunter
+            }
+            return RedirectToAction("Details", new { id = jedi.ID });
+        }
     }
 }
