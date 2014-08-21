@@ -1,11 +1,38 @@
-﻿<h2>Add a Jedi</h2>
-<form method="post">
-    Name: <input type="text" id="name" name="name"/><br/>
-    Affiliation: <select name="Affiliation">
-        <option value="Empire">Empire</option>
-        <option value="Rebel">Rebel</option>
-        <option value="Mercernary">Mercernary</option>
-        <option value="other">Other</option>
-    </select>
-    <input type="submit"/>
-</form>
+﻿<h2>Add a New Jedi</h2>
+<div class="panel panel-default">
+    <div class="panel-body">
+        <div class="col-md-offset-3 col-md-6">
+            <form method="post">
+                <div class="form-group">
+                    <label class="col-sm-2 control-label">Name</label>
+                    <div class="col-sm-10">
+                        <input type="text" class="form-control" name="name">
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label class="col-sm-2 control-label">Affiliation</label>
+                    <div class="col-sm-10">
+                        <select name="Affiliation" class="form-control">
+                            <option value="Empire">Empire</option>
+                            <option value="Rebel">Rebel</option>
+                            <option value="Mercernary">Mercernary</option>
+                            <option value="other">Other</option>
+                        </select>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label class="col-sm-2 control-label">Image</label>
+                    <div class="col-sm-10">
+                        <input type="text" class="form-control" name="image">
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label class="col-sm-2 control-label"></label>
+                    <div class="col-sm-10">
+                        <input type="submit" class="btn btn-block btn-primary" />
+                    </div>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>
