@@ -12,4 +12,19 @@ namespace EmpireDirectory.Models
         MasterJedi,
         JediCounsel
     }
+    public static class Ranks
+    {
+        public static List<Rank> toList()
+        {
+            var list = new List<Rank>()
+            {
+                Rank.Padwan,
+                Rank.Jedi,
+                Rank.JediCounsel,
+                Rank.MasterJedi
+            };
+            return list;
+        }
+    }
+    
 }

@@ -2,6 +2,7 @@
 <input type="text" name="Force" value="@Model.Force" />
 <input type="text" name="Lightsaber" value="@Model.LightSaber" />
 @{
+/*
 var x = Model.Rank.ToString();
 SelectList list = new SelectList(new List<EmpireDirectory.Models.Rank>()
 {
@@ -10,5 +11,6 @@ SelectList list = new SelectList(new List<EmpireDirectory.Models.Rank>()
     EmpireDirectory.Models.Rank.MasterJedi,
     EmpireDirectory.Models.Rank.JediCounsel
 }, Model.Rank);
-@Html.DropDownList("Rank", list, new { @class="form-control"})
+*/
 }
+@Html.DropDownList("Rank", new SelectList(EmpireDirectory.Models.Ranks.toList(), Model.Rank), new { @class = "form-control" })
