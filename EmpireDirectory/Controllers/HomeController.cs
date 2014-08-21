@@ -91,5 +91,13 @@ namespace EmpireDirectory.Controllers
             }
             return RedirectToAction("Details", new { id = jedi.ID });
         }
+        [HttpPost]
+        public ActionResult Delete(int id)
+        {
+            var target = characters.Where(x=>x.ID == id).FirstOrDefault();
+            characters.Remove(target);
+
+            return RedirectToAction("Index");
+        }
     }
 }
