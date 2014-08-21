@@ -15,9 +15,9 @@
             {
                 @Html.Partial("_JediPartial", (EmpireDirectory.Models.Jedi)Model);
             }
-            else if (Model.GetType().ToString() == "EmpireDirectory.Models.BountyHunder")
+            else if (Model.GetType().ToString() == "EmpireDirectory.Models.BountyHunter")
             {
-
+                @Html.Partial("_BountyHunterPartial", (EmpireDirectory.Models.BountyHunter)Model);
             }
         </div>
     </div>
