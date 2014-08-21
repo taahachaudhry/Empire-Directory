@@ -25,11 +25,12 @@ namespace EmpireDirectory.Controllers
             return View();
         }
         [HttpPost]
-        public ActionResult AddJedi(string name, Affiliation affiliation)
+        public ActionResult AddJedi(string name, Affiliation affiliation, string image)
         {
             Jedi jedi = new Jedi();
             jedi.Name = name;
             jedi.Affiliation = affiliation;
+            jedi.Image = image;
             characters.Add(jedi);
 
             return RedirectToAction("Index");
@@ -62,11 +63,10 @@ namespace EmpireDirectory.Controllers
             Character character = characters.Where(x => x.ID == id).FirstOrDefault();
             return View(character);
         }
-        public ActionResult Contact()
+        public ActionResult Edit(int id)
         {
-            ViewBag.Message = "Your contact page.";
-
-            return View();
+            Character character = characters.Where(x => x.ID == id).FirstOrDefault();
+            return View(character);
         }
     }
 }

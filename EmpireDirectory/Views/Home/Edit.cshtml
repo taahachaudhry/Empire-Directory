@@ -1,0 +1,26 @@
+﻿@model EmpireDirectory.Models.Character
+
+@{
+    ViewBag.Title = "Edit";
+}
+
+<h2>Edit</h2>
+@Html.EditorFor(x => x.Name)
+<select name="affiliation">
+    <option value="Empire">Empire</option>
+    <option value="Rebel">Rebel</option>
+    <option value="Mercernary">Mercernary</option>
+</select>
+@Html.EditorFor(x => x.Image)
+@Html.EditorFor(x => x.Quote)
+@Html.EditorFor(x => x.Bio)
+@Html.EditorFor(x => x.Weapon)
+
+@if (Model.GetType().ToString() == "EmpireDirectory.Models.Jedi")
+{
+    @Html.Partial("_JediEdit", (EmpireDirectory.Models.Jedi)Model);
+}
+else if (Model.GetType().ToString() == "EmpireDirectory.Models.BountyHunter")
+{
+    @Html.Partial("_BountyHunterEdit", (EmpireDirectory.Models.BountyHunter)Model);
+}
