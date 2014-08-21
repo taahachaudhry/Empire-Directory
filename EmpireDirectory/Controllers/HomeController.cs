@@ -34,6 +34,7 @@ namespace EmpireDirectory.Controllers
 
             return RedirectToAction("Index");
         }
+        /*
         public ActionResult Details(int id)
         {
             string type = characters.Where(x => x.ID == id).FirstOrDefault().GetType().ToString();
@@ -48,15 +49,18 @@ namespace EmpireDirectory.Controllers
             //If it gets here you got an error
             return View();
         }
-        public ActionResult JediDetail(int id)
+        */
+        public ActionResult Details(int id)
         {
             /*
             Jedi empty = new Jedi();
             string res = empty.GetType().ToString();
             Jedi anotherJedi = (Jedi)jedi; //casting jedi to Jedi from Character
-            */
+            ---
             Jedi jedi = (Jedi)characters.Where(x => x.ID == id && x.GetType().ToString()=="EmpireDirectory.Models.Jedi").FirstOrDefault(); //Linq statement - lamba
-            return View(jedi);
+            */
+            Character character = characters.Where(x => x.ID == id).FirstOrDefault();
+            return View(character);
         }
         public ActionResult Contact()
         {

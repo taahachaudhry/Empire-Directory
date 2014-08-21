@@ -1,0 +1,24 @@
+﻿@model EmpireDirectory.Models.Character
+
+<br /><div class="panel panel-default">
+    <div class="panel-body">
+        <div class="col-md-3">
+            <img class="img-responsive" style="height:200px; width:200px;" src="@Model.Image" />
+        </div>
+        <div class="col-md-9" style="text-align:center">
+            <h2>@Model.Name</h2>
+            <h4>@Model.Affiliation</h4>
+            <h3>@Model.Bio</h3>
+            <h3>"@Model.Quote"</h3>
+            <h5>Weapon:@Model.Weapon</h5>
+            @if (Model.GetType().ToString() == "EmpireDirectory.Models.Jedi")
+            {
+                @Html.Partial("_JediPartial", (EmpireDirectory.Models.Jedi)Model);
+            }
+            else if (Model.GetType().ToString() == "EmpireDirectory.Models.BountyHunder")
+            {
+
+            }
+        </div>
+    </div>
+</div>
