@@ -2,7 +2,7 @@
 <br /><div class="panel panel-default">
     <div class="panel-body">
         <div class="col-md-3">
-            <a href=""><img class="img-responsive" style="height:200px; width:200px;" src="@Model.FeauturedCharacter.Image"></a>
+            <a href="Home/Details/@Model.FeauturedCharacter.ID"><img class="img-responsive" style="height:200px; width:200px;" src="@Model.FeauturedCharacter.Image"></a>
         </div>
         <div class="col-md-9" style="text-align:center">
             <h3>"@Model.FeauturedCharacter.Quote"</h3>
@@ -10,11 +10,11 @@
         </div>
     </div>
 </div>
-<table class="table table-condensed table-striped table-responsive">
+<table class="table table-condensed table-striped table-responsive table-hover">
     <tr><th></th><th>Name</th><th>Affiliation</th></tr>
     @foreach (var c in Model.Characters)
     {
-        <tr>
+        <tr onclick="location.href='Home/Details/@c.ID'">
             <td><img class="img-responsive img-thumbnail" style="height:50px; width:50px;" src="@c.Image"></td>
             <td>@c.Name</td>
             <td>@c.Affiliation</td>

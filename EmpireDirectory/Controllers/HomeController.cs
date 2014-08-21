@@ -22,8 +22,6 @@ namespace EmpireDirectory.Controllers
         [HttpGet]
         public ActionResult AddJedi()
         {
-            
-
             return View();
         }
         [HttpPost]
