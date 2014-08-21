@@ -1,0 +1,19 @@
+﻿@model EmpireDirectory.Models.Jedi
+@{
+    ViewBag.Title = "JediDetail";
+}
+<br /><div class="panel panel-default">
+    <div class="panel-body">
+        <div class="col-md-3">
+            <img class="img-responsive" style="height:200px; width:200px;" src="@Model.Image" />
+        </div>
+        <div class="col-md-9" style="text-align:center">
+            <h3>@Model.Name</h3>
+            <h4>@Model.Affiliation, @Model.Rank</h4>
+            <h4>@Model.Bio</h4>
+            <h4>"@Model.Quote"</h4>
+            <h5>Weapon:@Model.Weapon</h5>
+            <h5>Lightsaber: @Model.LightSaber</h5>
+        </div>
+    </div>
+</div>

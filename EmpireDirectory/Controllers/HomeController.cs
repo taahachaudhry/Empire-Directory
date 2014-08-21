@@ -34,17 +34,29 @@ namespace EmpireDirectory.Controllers
 
             return RedirectToAction("Index");
         }
-
+        public ActionResult Details(int id)
+        {
+            string type = characters.Where(x => x.ID == id).FirstOrDefault().GetType().ToString();
+            if (type == "EmpireDirectory.Models.Jedi")
+            {
+                return RedirectToAction("JediDetail/" + id); //, new { id = id }
+            }
+            else if(type=="EmpireDirectory.Models.BountyHunder")
+            {
+                return RedirectToAction("BountyHunterDetail/" + id);
+            }
+            //If it gets here you got an error
+            return View();
+        }
         public ActionResult JediDetail(int id)
         {
-            characters[0].ID = 0;
-            //Jedi empty = new Jedi();
-            //string res = empty.GetType().ToString();
+            /*
+            Jedi empty = new Jedi();
+            string res = empty.GetType().ToString();
+            Jedi anotherJedi = (Jedi)jedi; //casting jedi to Jedi from Character
+            */
             Jedi jedi = (Jedi)characters.Where(x => x.ID == id && x.GetType().ToString()=="EmpireDirectory.Models.Jedi").FirstOrDefault(); //Linq statement - lamba
-
-            // Jedi anotherJedi = (Jedi)jedi; //casting jedi to Jedi from Character
-
-            return View();
+            return View(jedi);
         }
         public ActionResult Contact()
         {
