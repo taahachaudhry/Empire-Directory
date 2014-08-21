@@ -1,9 +1,14 @@
 ﻿@model EmpireDirectory.Models.Jedi
 <input type="text" name="Force" value="@Model.Force" />
 <input type="text" name="Lightsaber" value="@Model.LightSaber" />
-<select name="affiliation">
-    <option value="Padwan">Padwan</option>
-    <option value="Jedi">Jedi</option>
-    <option value="MasterJedi">Master Jedi</option>
-    <option value="JediCounsel">Jedi Counsel</option>
-</select>
+@{
+var x = Model.Rank.ToString();
+SelectList list = new SelectList(new List<EmpireDirectory.Models.Rank>()
+{
+    EmpireDirectory.Models.Rank.Padwan,
+    EmpireDirectory.Models.Rank.Jedi,
+    EmpireDirectory.Models.Rank.MasterJedi,
+    EmpireDirectory.Models.Rank.JediCounsel
+}, Model.Rank);
+@Html.DropDownList("Rank", list, new { @class="form-control"})
+}

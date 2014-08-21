@@ -58,7 +58,7 @@ namespace EmpireDirectory.Controllers
             string res = empty.GetType().ToString();
             Jedi anotherJedi = (Jedi)jedi; //casting jedi to Jedi from Character
             ---
-            Jedi jedi = (Jedi)characters.Where(x => x.ID == id && x.GetType().ToString()=="EmpireDirectory.Models.Jedi").FirstOrDefault(); //Linq statement - lamba
+            Jedi jedi = (Jedi)characters.Where(x => x.ID == id && x.GetType().ToString()=="EmpireDirectory.Models.Jedi").FirstOrDefault(); //Linq statement - lambda
             */
             Character character = characters.Where(x => x.ID == id).FirstOrDefault();
             return View(character);
